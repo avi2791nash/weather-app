@@ -19,8 +19,10 @@ weatherForm.addEventListener('submit', (e) => {
       if (data.error) {
         messageOne.textContent = 'Please provide a valid location';
       } else {
-        messageTwo.textContent = 'Weather: ' + data.forecast;
+        messageTwo.textContent = 'Weather: ' + data.forecast.weather_descriptions[0] + ' and the current Temperature is ' + data.forecast.temperature +
+         ' , it Feels Like: ' + data.forecast.feelslike + ' and Humidity: ' + data.forecast.humidity;
         messageOne.textContent = 'Location: ' + data.location;
+
       }
     });
   });
